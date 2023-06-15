@@ -4,12 +4,14 @@ import com.tekcapsule.marketplace.domain.command.CreateCommand;
 import com.tekcapsule.marketplace.domain.command.DisableCommand;
 import com.tekcapsule.marketplace.domain.command.UpdateCommand;
 import com.tekcapsule.marketplace.domain.model.Product;
+import com.tekcapsule.marketplace.domain.model.Status;
 import com.tekcapsule.marketplace.domain.repository.MarketplaceDynamoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -24,16 +26,17 @@ public class MarketplaceServiceImpl implements MarketplaceService {
     @Override
     public void create(CreateCommand createCommand) {
 
-        log.info(String.format("Entering create product service - Product Code :%s", createCommand.getCode()));
-
+        log.info(String.format("Entering create product service - Product Name :%s", createCommand.getTitle()));
+        String code= UUID.randomUUID().toString();
         Product product = Product.builder()
-                .code(createCommand.getCode())
+                .code(code)
+                .vendor(createCommand.getVendor())
                 .title(createCommand.getTitle())
                 .summary(createCommand.getSummary())
                 .description(createCommand.getDescription())
                 .imageUrl(createCommand.getImageUrl())
-                .categories(createCommand.getCategories())
-                .status("ACTIVE")
+                .category(createCommand.getCategory())
+                .status(Status.SUBMITTED)
                 .build();
 
         product.setAddedOn(createCommand.getExecOn());
@@ -51,9 +54,8 @@ public class MarketplaceServiceImpl implements MarketplaceService {
         Product product = marketplaceDynamoRepository.findBy(updateCommand.getCode());
         if (product != null) {
             product.setTitle(updateCommand.getTitle());
-            product.setStatus("ACTIVE");
             product.setSummary(updateCommand.getSummary());
-            product.setCategories(updateCommand.getCategories());
+            product.setCategory(updateCommand.getCategory());
             product.setImageUrl(updateCommand.getImageUrl());
             product.setDescription(updateCommand.getDescription());
             product.setUpdatedOn(updateCommand.getExecOn());
@@ -70,7 +72,7 @@ public class MarketplaceServiceImpl implements MarketplaceService {
         marketplaceDynamoRepository.findBy(disableCommand.getCode());
         Product product = marketplaceDynamoRepository.findBy(disableCommand.getCode());
         if (product != null) {
-            product.setStatus("INACTIVE");
+            product.setStatus(Status.INACTIVE);
             product.setUpdatedOn(disableCommand.getExecOn());
             product.setUpdatedBy(disableCommand.getExecBy().getUserId());
             marketplaceDynamoRepository.save(product);

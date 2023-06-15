@@ -22,14 +22,30 @@ public class Product extends BaseDomainEntity implements AggregateRoot {
     private String code;
     @DynamoDBAttribute(attributeName = "title")
     private String title;
-    @DynamoDBAttribute(attributeName = "categories")
-    private List<Category> categories;
+    @DynamoDBAttribute(attributeName = "category")
+    private String category;
+    @DynamoDBAttribute(attributeName = "productType")
+    private ProductType productType;
+    @DynamoDBAttribute(attributeName = "prizingModel")
+    private PrizingModel prizingModel;
     @DynamoDBAttribute(attributeName = "summary")
     private String summary;
     @DynamoDBAttribute(attributeName = "description")
     private String description;
+    @DynamoDBAttribute(attributeName = "vendor")
+    private String vendor;
+    @DynamoDBAttribute(attributeName = "tags")
+    private List<String> tags;
+    @DynamoDBAttribute(attributeName = "website")
+    private String website;
+    @DynamoDBAttribute(attributeName = "recommendations")
+    private int recommendations;
     @DynamoDBAttribute(attributeName = "imageUrl")
     private String imageUrl;
+    @DynamoDBAttribute(attributeName = "productDemo")
+    private UserGuide productDemo;
+    @DynamoDBAttribute(attributeName = "userGuides")
+    private List<UserGuide> userGuides;
     @DynamoDBAttribute(attributeName = "status")
-    private String status;
+    private Status status;
 }
