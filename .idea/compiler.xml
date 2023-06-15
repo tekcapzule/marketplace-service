@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="marketplace-service" />
-        <module name="marketplace-domain" />
+        <module name="product-service" />
+        <module name="product-domain" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="marketplace-domain" target="11" />
+      <module name="marketplace-service" target="11" />
+      <module name="topic-application" target="1.5" />
       <module name="topic-service" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -18,6 +21,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="marketplace-domain" options="-parameters" />
       <module name="marketplace-service" options="-parameters" />
+      <module name="product-domain" options="-parameters" />
+      <module name="product-service" options="-parameters" />
       <module name="topic-service" options="-parameters" />
     </option>
   </component>
