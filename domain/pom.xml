@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.tekcapsule</groupId>
-    <artifactId>product-domain</artifactId>
+    <artifactId>marketplace-domain</artifactId>
     <version>1.0.0</version>
     <name>Marketplace Domain</name>
     <description>Marketplace Domain</description>
@@ -61,9 +61,9 @@
     </dependencyManagement>
     <distributionManagement>
         <repository>
-            <id>product</id>
+            <id>marketplace</id>
             <name>GitHub TekCapsule Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/tekcapsule/product-service</url>
+            <url>https://maven.pkg.github.com/tekcapsule/marketplace-service</url>
         </repository>
     </distributionManagement>
 </project>

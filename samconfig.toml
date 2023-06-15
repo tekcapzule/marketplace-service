@@ -2,9 +2,9 @@ version = 0.1
 [dev]
 [dev.deploy]
 [dev.deploy.parameters]
-stack_name = "dev-marketpalce-service"
+stack_name = "dev-marketplace-service"
 s3_bucket = "com.tekcapsule.api.deployment.dev"
-s3_prefix = "dev-marketpalce-service"
+s3_prefix = "dev-marketplace-service"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
@@ -14,9 +14,9 @@ image_repositories = []
 [prod]
 [prod.deploy]
 [prod.deploy.parameters]
-stack_name = "prod-marketpalce-service"
+stack_name = "prod-marketplace-service"
 s3_bucket = "com.tekcapsule.api.deployment.prod"
-s3_prefix = "prod-marketpalce-service"
+s3_prefix = "prod-marketplace-service"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"

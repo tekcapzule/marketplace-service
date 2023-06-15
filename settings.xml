@@ -18,8 +18,8 @@
                     </snapshots>
                 </repository>
                 <repository>
-                    <id>marketpalce</id>
-                    <url>https://maven.pkg.github.com/tekcapsule/marketpalce-service</url>
+                    <id>marketplace</id>
+                    <url>https://maven.pkg.github.com/tekcapsule/marketplace-service</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
@@ -34,7 +34,7 @@
 
     <servers>
         <server>
-            <id>marketpalce</id>
+            <id>marketplace</id>
             <username>${env.SERVER_USERNAME}</username>
             <password>${env.SERVER_PASSWORD}</password>
         </server>
