@@ -1,0 +1,9 @@
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/command/CreateCommand.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/repository/MarketplaceRepositoryImpl.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/repository/MarketplaceDynamoRepository.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/service/MarketplaceService.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/model/Product.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/command/DisableCommand.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/model/Category.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/service/MarketplaceServiceImpl.java
+/Users/linjithkunnon/Desktop/Workspace/TekCapsule/marketplace-service/domain/src/main/java/com/tekcapsule/marketplace/domain/command/UpdateCommand.java

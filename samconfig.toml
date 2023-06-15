@@ -1,0 +1,24 @@
+version = 0.1
+[dev]
+[dev.deploy]
+[dev.deploy.parameters]
+stack_name = "dev-marketpalce-service"
+s3_bucket = "com.tekcapsule.api.deployment.dev"
+s3_prefix = "dev-marketpalce-service"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Stage=\"dev\""
+image_repositories = []
+
+[prod]
+[prod.deploy]
+[prod.deploy.parameters]
+stack_name = "prod-marketpalce-service"
+s3_bucket = "com.tekcapsule.api.deployment.prod"
+s3_prefix = "prod-marketpalce-service"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Stage=\"prod\" Environment=\"prod\""
+image_repositories = []
