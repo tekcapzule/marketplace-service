@@ -30,13 +30,21 @@ public class MarketplaceServiceImpl implements MarketplaceService {
         String code= UUID.randomUUID().toString();
         Product product = Product.builder()
                 .code(code)
-                .vendor(createCommand.getVendor())
                 .title(createCommand.getTitle())
                 .summary(createCommand.getSummary())
                 .description(createCommand.getDescription())
-                .imageUrl(createCommand.getImageUrl())
                 .category(createCommand.getCategory())
-                .status(Status.SUBMITTED)
+                .productType(createCommand.getProductType())
+                .prizingModel(createCommand.getPrizingModel())
+                .description(createCommand.getDescription())
+                .vendor(createCommand.getVendor())
+                .tags(createCommand.getTags())
+                .website(createCommand.getWebsite())
+                .imageUrl(createCommand.getImageUrl())
+                .productDemo(createCommand.getProductDemo())
+                .userGuides(createCommand.getUserGuides())
+                .recommendations(0)
+                .status(Status.ACTIVE)
                 .build();
 
         product.setAddedOn(createCommand.getExecOn());
@@ -56,8 +64,16 @@ public class MarketplaceServiceImpl implements MarketplaceService {
             product.setTitle(updateCommand.getTitle());
             product.setSummary(updateCommand.getSummary());
             product.setCategory(updateCommand.getCategory());
+            product.setProductType(updateCommand.getProductType());
+            product.setPrizingModel(updateCommand.getPrizingModel());
             product.setImageUrl(updateCommand.getImageUrl());
             product.setDescription(updateCommand.getDescription());
+            product.setVendor(updateCommand.getVendor());
+            product.setTags(updateCommand.getTags());
+            product.setWebsite(updateCommand.getWebsite());
+            product.setRecommendations(updateCommand.getRecommendations());
+            product.setProductDemo(updateCommand.getProductDemo());
+            product.setUserGuides(updateCommand.getUserGuides());
             product.setUpdatedOn(updateCommand.getExecOn());
             product.setUpdatedBy(updateCommand.getExecBy().getUserId());
             marketplaceDynamoRepository.save(product);
