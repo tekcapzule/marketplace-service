@@ -25,6 +25,7 @@ public class Product extends BaseDomainEntity implements AggregateRoot {
     @DynamoDBAttribute(attributeName = "category")
     private String category;
     @DynamoDBAttribute(attributeName = "productType")
+    @DynamoDBTypeConvertedEnum
     private ProductType productType;
     @DynamoDBAttribute(attributeName = "prizingModel")
     @DynamoDBTypeConvertedEnum
