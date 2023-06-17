@@ -53,7 +53,7 @@ Resources:
   MarketplaceTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: !Sub "${Stage}Marketplace"
+      TableName: !Sub "${Stage}Product"
       AttributeDefinitions:
         - AttributeName: code
           AttributeType: S

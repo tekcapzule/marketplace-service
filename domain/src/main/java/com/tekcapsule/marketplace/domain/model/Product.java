@@ -27,6 +27,7 @@ public class Product extends BaseDomainEntity implements AggregateRoot {
     @DynamoDBAttribute(attributeName = "productType")
     private ProductType productType;
     @DynamoDBAttribute(attributeName = "prizingModel")
+    @DynamoDBTypeConvertedEnum
     private PrizingModel prizingModel;
     @DynamoDBAttribute(attributeName = "summary")
     private String summary;
@@ -47,5 +48,6 @@ public class Product extends BaseDomainEntity implements AggregateRoot {
     @DynamoDBAttribute(attributeName = "userGuides")
     private List<UserGuide> userGuides;
     @DynamoDBAttribute(attributeName = "status")
+    @DynamoDBTypeConvertedEnum
     private Status status;
 }
