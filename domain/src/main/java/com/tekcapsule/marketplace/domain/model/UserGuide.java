@@ -15,6 +15,6 @@ public class UserGuide {
     private int durationInMinutes;
     private String summary;
     private String description;
-    private String videoUrl;
+    private String resourceUrl;
     private String imageUrl;
 }
