@@ -171,10 +171,10 @@ Resources:
             RestApiId:
               Ref: MarketplaceApi
 
-  ApproveMarketplaceFunction:
+  ApproveProductFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub "${Stage}-Marketplace-ApproveMarketplace"
+      FunctionName: !Sub "${Stage}-Marketplace-ApproveProduct"
       SnapStart:
         ApplyOn: PublishedVersions
       Policies:
