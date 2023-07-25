@@ -3,9 +3,11 @@ package com.tekcapsule.marketplace.application.mapper;
 import com.tekcapsule.core.domain.Command;
 import com.tekcapsule.core.domain.ExecBy;
 import com.tekcapsule.core.domain.Origin;
+import com.tekcapsule.marketplace.application.function.input.ApproveProductInput;
 import com.tekcapsule.marketplace.application.function.input.CreateInput;
 import com.tekcapsule.marketplace.application.function.input.DisableInput;
 import com.tekcapsule.marketplace.application.function.input.UpdateInput;
+import com.tekcapsule.marketplace.domain.command.ApproveCommand;
 import com.tekcapsule.marketplace.domain.command.CreateCommand;
 import com.tekcapsule.marketplace.domain.command.DisableCommand;
 import com.tekcapsule.marketplace.domain.command.UpdateCommand;
@@ -49,6 +51,13 @@ public final class InputOutputMapper {
         BeanUtils.copyProperties(disableInput, disableCommand);
         addOrigin.apply(disableCommand, origin);
         return disableCommand;
+    };
+
+    public static final BiFunction<ApproveProductInput, Origin, ApproveCommand> buildApproveCommandFromApproveProductInput = (approveProductInput, origin) -> {
+        ApproveCommand approveCommand =  ApproveCommand.builder().build();
+        BeanUtils.copyProperties(approveProductInput, approveCommand);
+        addOrigin.apply(approveCommand, origin);
+        return approveCommand;
     };
 
 }

@@ -171,6 +171,28 @@ Resources:
             RestApiId:
               Ref: MarketplaceApi
 
+  ApproveProductFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "${Stage}-Marketplace-ApproveProduct"
+      SnapStart:
+        ApplyOn: PublishedVersions
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref MarketplaceTable
+      Environment:
+        Variables:
+          SPRING_CLOUD_FUNCTION_DEFINITION: approveFunction
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: marketplace/approve
+            Method: post
+            RestApiId:
+              Ref: MarketplaceApi
+
+
   # Set Output Variable
 
 Outputs:
