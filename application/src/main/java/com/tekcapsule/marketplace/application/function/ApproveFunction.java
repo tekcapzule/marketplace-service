@@ -42,7 +42,7 @@ public class ApproveFunction implements Function<Message<ApproveProductInput>, M
             ApproveProductInput approveProductInput = approveMarketplaceInputMessage.getPayload();
             log.info(String.format("Entering approve product Function -  product Id:%s", approveProductInput.getCode()));
             Origin origin = HeaderUtil.buildOriginFromHeaders(approveMarketplaceInputMessage.getHeaders());
-            ApproveCommand approveCommand = InputOutputMapper.buildApproveCommandFromApproveVideoLibraryInput.apply(approveProductInput, origin);
+            ApproveCommand approveCommand = InputOutputMapper.buildApproveCommandFromApproveProductInput.apply(approveProductInput, origin);
             marketplaceService.approve(approveCommand);
             responseHeaders = HeaderUtil.populateResponseHeaders(responseHeaders, Stage.valueOf(stage), Outcome.SUCCESS);
             payload = PayloadUtil.composePayload(Outcome.SUCCESS);

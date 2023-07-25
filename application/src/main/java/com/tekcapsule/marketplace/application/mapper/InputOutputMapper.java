@@ -53,7 +53,7 @@ public final class InputOutputMapper {
         return disableCommand;
     };
 
-    public static final BiFunction<ApproveProductInput, Origin, ApproveCommand> buildApproveCommandFromApproveVideoLibraryInput = (approveResearchPaperInput, origin) -> {
+    public static final BiFunction<ApproveProductInput, Origin, ApproveCommand> buildApproveCommandFromApproveProductInput = (approveResearchPaperInput, origin) -> {
         ApproveCommand approveCommand =  ApproveCommand.builder().build();
         BeanUtils.copyProperties(approveResearchPaperInput, approveCommand);
         addOrigin.apply(approveCommand, origin);
