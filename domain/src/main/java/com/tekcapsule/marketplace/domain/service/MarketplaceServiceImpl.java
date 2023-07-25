@@ -1,5 +1,6 @@
 package com.tekcapsule.marketplace.domain.service;
 
+import com.tekcapsule.marketplace.domain.command.ApproveCommand;
 import com.tekcapsule.marketplace.domain.command.CreateCommand;
 import com.tekcapsule.marketplace.domain.command.DisableCommand;
 import com.tekcapsule.marketplace.domain.command.UpdateCommand;
@@ -44,7 +45,7 @@ public class MarketplaceServiceImpl implements MarketplaceService {
                 .productDemo(createCommand.getProductDemo())
                 .userGuides(createCommand.getUserGuides())
                 .recommendations(0)
-                .status(Status.ACTIVE)
+                .status(Status.SUBMITTED)
                 .build();
 
         product.setAddedOn(createCommand.getExecOn());
@@ -94,6 +95,22 @@ public class MarketplaceServiceImpl implements MarketplaceService {
             marketplaceDynamoRepository.save(product);
         }
     }
+
+    @Override
+    public void approve(ApproveCommand approveCommand) {
+        log.info(String.format("Entering approve product service -  product Id:%s", approveCommand.getCode()));
+
+        Product product = marketplaceDynamoRepository.findBy(approveCommand.getCode());
+        if (product != null) {
+            product.setStatus(Status.ACTIVE);
+
+            product.setUpdatedOn(approveCommand.getExecOn());
+            product.setUpdatedBy(approveCommand.getExecBy().getUserId());
+
+            marketplaceDynamoRepository.save(product);
+        }
+    }
+
 
     @Override
     public List<Product> findAll() {
