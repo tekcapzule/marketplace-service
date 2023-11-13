@@ -12,14 +12,14 @@
             <repositories>
                 <repository>
                     <id>core</id>
-                    <url>https://maven.pkg.github.com/tekcapsule/tekcapsule-core</url>
+                    <url>https://maven.pkg.github.com/tekcapzule/tekcapzule-core</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
                 </repository>
                 <repository>
                     <id>marketplace</id>
-                    <url>https://maven.pkg.github.com/tekcapsule/marketplace-service</url>
+                    <url>https://maven.pkg.github.com/tekcapzule/marketplace-service</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>

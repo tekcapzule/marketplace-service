@@ -27,7 +27,7 @@ Globals:
         TABLE: !Ref MarketplaceTable
         APPLICATION_ENVIRONMENT: !Ref Stage
         CLOUD_REGION: us-east-1
-        MAIN_CLASS: com.tekcapsule.marketplace.application.MarketplaceApplication
+        MAIN_CLASS: com.tekcapzule.marketplace.application.MarketplaceApplication
         JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
 
 Resources:

@@ -7,12 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="product-service" />
+        <module name="marketplace-service" />
         <module name="product-domain" />
+        <module name="marketplace-domain" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="marketplace-domain" target="11" />
-      <module name="marketplace-service" target="11" />
       <module name="topic-application" target="1.5" />
       <module name="topic-service" target="11" />
     </bytecodeTargetLevel>
